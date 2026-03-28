@@ -27,7 +27,7 @@ func (c *Coin) FetchPrice() (float64, error) {
 	if err != nil {
 		return 0, err
 	}
-	req.Header.Add("x-cg-demo-api-key", "CG-GMX8XmTw7cpPQv1QpLf6cLAc")
+	req.Header.Add("x-cg-demo-api-key", "")
 	res, err := http.DefaultClient.Do(req)
 	if err != nil {
 		return 0, err
