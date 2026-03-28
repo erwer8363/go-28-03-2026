@@ -5,9 +5,13 @@ import (
 	"crypto-calc/calculator"
 	"crypto-calc/models"
 	"fmt"
+	"path"
 )
 
+import "github.com/joho/godotenv"
+
 func main() {
+	godotenv.Load(path.Join(".", ".env"))
 	coinList := [3]models.Coin{
 		{
 			ID:     "bitcoin",

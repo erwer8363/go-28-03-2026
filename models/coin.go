@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"os"
 )
 
 const API_URL = "https://api.coingecko.com/api/v3/simple/price"
@@ -27,7 +28,7 @@ func (c *Coin) FetchPrice() (float64, error) {
 	if err != nil {
 		return 0, err
 	}
-	req.Header.Add("x-cg-demo-api-key", "")
+	req.Header.Add("x-cg-demo-api-key", os.Getenv("API_KEY"))
 	res, err := http.DefaultClient.Do(req)
 	if err != nil {
 		return 0, err
