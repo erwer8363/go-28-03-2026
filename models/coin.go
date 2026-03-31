@@ -40,6 +40,7 @@ func (c *Coin) FetchPrice() (float64, error) {
 	}
 	price := map[string]Price{}
 	json.Unmarshal(body, &price)
+	fmt.Println("依次展示的吗。。。price:", price[c.ID], c.ID)
 	return price[c.ID].Usd, nil
 }
 

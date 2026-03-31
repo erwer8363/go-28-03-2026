@@ -6,6 +6,7 @@ import (
 	"crypto-calc/models"
 	"fmt"
 	"path"
+	"time"
 )
 
 import "github.com/joho/godotenv"
@@ -40,4 +41,5 @@ func main() {
 	}
 	newTotal := calculator.CalcTotal(coins)
 	fmt.Println("Hello ever", newTotal)
+	time.Sleep(5 * time.Second)
 }
